@@ -1,7 +1,7 @@
 package enumeration;
 
 public enum Users {
-    ZORAN("zoran.v.zivanovic@gmail.com","Srecica@11091983", "Belgrade 11000");
+    ZORAN("zoran.v.zivanovic@gmail.com","", "Belgrade 11000");
 
     private final String userName;
     private final String password;
