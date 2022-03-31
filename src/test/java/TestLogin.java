@@ -3,10 +3,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page_object.LoginPage;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Login {
+public class TestLogin {
  LoginPage login;
 
     @BeforeEach
