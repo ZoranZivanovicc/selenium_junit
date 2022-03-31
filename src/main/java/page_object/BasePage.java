@@ -30,9 +30,17 @@ public class BasePage {
 
     }
 
+    public BasePage() {
+    }
+
+    WebDriver getDriver() {
+        return driver;
+    }
+
     public void setTimeoutSec(int timeoutSec) {
         this.timeoutSec = timeoutSec;
     }
+
     public void quit() {
         if (driver != null) {
             driver.quit();
@@ -82,10 +90,9 @@ public class BasePage {
         return true;
     }
 
-    public String getText(By element){
+    public String getText(By element) {
         return find(element).getText();
     }
-
 
 
 }

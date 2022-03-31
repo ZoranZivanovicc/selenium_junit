@@ -2,7 +2,8 @@ package page_object;
 
 import org.openqa.selenium.By;
 
-public class LoginPage extends BasePage {
+public class OrdersPage extends BasePage {
+    String param;
     By usernameInput = By.id("user-name");
     By passwordInput = By.id("password");
     By submitButton = By.id("login-button");
@@ -10,7 +11,7 @@ public class LoginPage extends BasePage {
 
 
 
-    public LoginPage(String browser, String urls) {
+    public OrdersPage(String browser, String urls) {
         super(browser);
         visit(urls);
     }
@@ -21,18 +22,12 @@ public class LoginPage extends BasePage {
         click(submitButton);
 
     }
-    public void withJustUserName(String username) {
-        type(usernameInput, username);
-        click(submitButton);
-    }
 
-    public boolean successBoxPresent() {
-        return isDisplayed(headerLogo);
-    }
 
-    public String getErrorMessage(String errorMessage) {
-        By tes = By.xpath("//h3[.='"+errorMessage+"']");
-        return getText(tes);
+
+    public String getErrorMessage(String orderName) {
+        By orderTitle = By.xpath("//div[.='"+orderName+"']");
+        return getText(orderTitle);
 
     }
 }
