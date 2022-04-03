@@ -96,8 +96,8 @@ public class BasePage {
     public String getText(By element) {
         return find(element).getText();
     }
-    public List< String > textValues(By loc) {
-        return getValues(loc, e -> e.getText());
+    public List< String > textValues(By element) {
+        return getValues(element, e -> e.getText());
     }
 
     private List< String > getValues(

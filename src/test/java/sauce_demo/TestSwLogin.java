@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import page_object.saucelabs.LoginPage;
 
 import static enumeration.Users.SWAG_LOCKED_USER;
+import static enumeration.Users.SWAG_STANDAR_USER;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class TestSwLogin {
@@ -27,7 +28,7 @@ public class TestSwLogin {
 
     @Test
     void testLoginSuccess() {
-        login.with(Users.SWAG_STANDAR_USER.getUserName(), SWAG_LOCKED_USER.getPassword());
+        login.with(SWAG_STANDAR_USER.getUserName(), SWAG_LOCKED_USER.getPassword());
         assertThat(login.successBoxPresent()).isTrue();
     }
 

@@ -1,15 +1,14 @@
 package gigatron;
 
 import enumeration.Urls;
-import org.assertj.core.api.ListAssert;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page_object.gigatron.IndexPage;
 
-import java.util.List;
-
+import static enumeration.DataSet.VERTICAL_MENU_PRODUCTS;
+import static enumeration.Urls.GIGATRON_INDEX_PAGE;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class TestIndexPage {
@@ -18,7 +17,7 @@ public class TestIndexPage {
 
     @BeforeEach
     void setup() {
-        indexPage = new IndexPage("chrome", Urls.GIGATRON_INDEX_PAGE.getUrls());
+        indexPage = new IndexPage("chrome", GIGATRON_INDEX_PAGE.getUrls());
     }
 
     @AfterEach
@@ -52,7 +51,7 @@ public class TestIndexPage {
     void iCanSeeListOfProducts() {
         indexPage.userAcceptsCookies();
         indexPage.openProductsMenu();
-        assertThat(indexPage.listProducts()).isEqualTo("Prenosni računari, Računari i komponente, Oprema za računare, Gaming, TV, audio, video, Mobilni telefoni i oprema, Bela tehnika, Prečišćivači vazduha, Mali kućni aparati, Sve za kuću, Fotoaparati i kamere, Sport i putovanje, Lifestyle, Muzički instrumenti i oprema, Kancelarijska oprema, Igračke, dečija i školska oprema, Alati i baštenska oprema, Izdvajamo iz ponude");
+        assertThat(indexPage.getListOfProducts()).isEqualTo(VERTICAL_MENU_PRODUCTS.getDataset());
 
 
 
