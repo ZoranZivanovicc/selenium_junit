@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.lang.invoke.MethodHandles.lookup;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -30,9 +33,17 @@ public class BasePage {
 
     }
 
+    public BasePage() {
+    }
+
+    WebDriver getDriver() {
+        return driver;
+    }
+
     public void setTimeoutSec(int timeoutSec) {
         this.timeoutSec = timeoutSec;
     }
+
     public void quit() {
         if (driver != null) {
             driver.quit();
@@ -82,10 +93,25 @@ public class BasePage {
         return true;
     }
 
-    public String getText(By element){
+    public String getText(By element) {
         return find(element).getText();
     }
+    public List< String > textValues(By element) {
+        return getValues(element, e -> e.getText());
+    }
 
+    private List< String > getValues(
+            By loc, Function<WebElement,String > pred) {
+
+        List< WebElement > elements = driver.findElements(loc);
+
+        List< String > values = elements.stream().map(pred)
+                .collect(Collectors.toList());
+
+        return values;
+
+
+    }
 
 
 }
