@@ -5,7 +5,7 @@ import enumeration.Users;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page_object.LoginPage;
+import page_object.saucelabs.LoginPage;
 
 import static enumeration.Users.SWAG_LOCKED_USER;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

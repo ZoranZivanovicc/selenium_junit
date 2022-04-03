@@ -1,6 +1,7 @@
-package page_object;
+package page_object.saucelabs;
 
 import org.openqa.selenium.By;
+import page_object.BasePage;
 
 public class LoginPage extends BasePage {
     By usernameInput = By.id("user-name");
