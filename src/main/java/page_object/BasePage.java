@@ -36,7 +36,7 @@ public class BasePage {
     public BasePage() {
     }
 
-    WebDriver getDriver() {
+    public WebDriver getDriver() {
         return driver;
     }
 
