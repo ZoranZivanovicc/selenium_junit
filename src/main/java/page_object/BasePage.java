@@ -82,6 +82,10 @@ public class BasePage {
         return isDisplayed(
                 ExpectedConditions.visibilityOfElementLocated(locator));
     }
+    public boolean isEnabled(By locator) {
+        return isDisplayed(
+                ExpectedConditions.elementToBeClickable(locator));
+    }
 
     public boolean isDisplayed(ExpectedCondition<?> expectedCondition) {
         try {
