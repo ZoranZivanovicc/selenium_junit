@@ -1,7 +1,7 @@
 package enumeration;
 
 public enum DataSet {
-    DATA("");
+    TEXT_FROM_LOGO("PHPTRAVELS TRAVEL TECHNOLOGY PARTNER");
 
     private final String dataset;
 

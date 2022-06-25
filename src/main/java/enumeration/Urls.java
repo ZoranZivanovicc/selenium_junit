@@ -1,7 +1,7 @@
 package enumeration;
 
 public enum Urls {
-    PHP_TRAVELS_INDEX("");
+    PHP_TRAVELS_INDEX("https://phptravels.com/");
     private final String urls;
 
     Urls(String urls) {
